@@ -12,6 +12,8 @@ public class ServerIP : MonoBehaviour
     public void SetServerIP(){
         serverIP = inputText.GetComponent<InputField>().text;
         connectButton.GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = "Connected to: " + serverIP;
+
+        Client.StartClient(serverIP);
     }
 
 

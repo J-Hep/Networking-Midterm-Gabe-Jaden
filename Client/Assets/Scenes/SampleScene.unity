@@ -291,7 +291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &156960531
 GameObject:
@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 490085240}
   - component: {fileID: 490085239}
   - component: {fileID: 490085241}
+  - component: {fileID: 490085242}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -482,7 +483,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &490085241
 MonoBehaviour:
@@ -499,6 +500,21 @@ MonoBehaviour:
   serverIP: 
   inputText: {fileID: 1817970763}
   connectButton: {fileID: 1641443896}
+--- !u!114 &490085242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490085238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f64d8472bd5ba4896932a189e5dd7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCube: {fileID: 1368838273}
+  culminativeTime: 0
+  desiredTime: 0.25
 --- !u!1 &494340390
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +546,7 @@ Transform:
   - {fileID: 113361926}
   - {fileID: 569953574}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569953573
 GameObject:
@@ -804,7 +820,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &871032957
 GameObject:
@@ -978,7 +994,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50.959003, y: 0, z: 0}
 --- !u!1 &1030574688
 GameObject:
@@ -1051,7 +1067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '[]'
 --- !u!222 &1030574691
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1246,7 +1262,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1220106008
 GameObject:
@@ -1617,7 +1633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0de13a4f9a8cef74c95723d861bf9cad, type: 2}
+  - {fileID: 2100000, guid: f7f57c6e9a8582642842272a3837cfe9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1660,7 +1676,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1368838278
 MonoBehaviour:
