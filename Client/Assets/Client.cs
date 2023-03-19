@@ -83,6 +83,8 @@ public class Client : MonoBehaviour
             //Local byte list convert
             Debug.Log("Local byte List Convert: " + BitConverter.ToSingle(byteArr,0) +" "+  BitConverter.ToSingle(byteArr,1*4)+" "+  BitConverter.ToSingle(byteArr,2*4));
 
+            clientSoc.SendTo(outBuffer, remoteEP);
+
             //Bonus portion for interval
             /*
             if(culminativeTime >= desiredTime){

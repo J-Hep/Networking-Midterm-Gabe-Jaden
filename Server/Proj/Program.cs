@@ -1,15 +1,18 @@
-/*
-using System;
+﻿using System;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 
-public class UDPServer: MonoBehaviour
+
+
+public class UDPServer
 {
+
+
     public static byte[] buffer;
     public static IPHostEntry hostInfo ;
     public static IPAddress ip;
@@ -17,8 +20,8 @@ public class UDPServer: MonoBehaviour
     public static Socket server;
     public static EndPoint remoteClient;
 
-    public GameObject cube;
     public float posX, posZ;
+
 
     public static void StartServer()
     {
@@ -26,7 +29,7 @@ public class UDPServer: MonoBehaviour
         hostInfo = Dns.GetHostEntry(Dns.GetHostName());
         ip = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
         Console.WriteLine("Server name: {0}  IP: {1}", hostInfo.HostName, ip);
-        Debug.Log("Server name: {0}  IP: {1} "+ hostInfo.HostName+ ip);
+ 
         localEP = new IPEndPoint(ip, 8888);
         server = new Socket(ip.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
         remoteClient = new IPEndPoint(IPAddress.Any, 0);
@@ -35,31 +38,38 @@ public class UDPServer: MonoBehaviour
         {
             server.Bind(localEP);
             Console.WriteLine("Waiting for data....");
-            Debug.Log("Waiting for data....");
+
 
             //server shutdown
         } catch (Exception e)
         {
             Console.WriteLine(e.ToString());
-            Debug.Log(e.ToString());
+
         }
-    }
-    
-    private void Start() {
-        StartServer();
+
+        while(true)
+        {
+            recvUpdate();
+        }
 
     }
 
-    private void Update(){
+    public static void recvUpdate()
+    {
         
      int recv = server.ReceiveFrom(buffer, ref remoteClient);
 
-    //Who knew a single and a float were the same thing. So much trial n error to get this its not even funny.
-     Debug.Log( BitConverter.ToSingle(buffer,0) +" "+  BitConverter.ToSingle(buffer,1*4)+" "+  BitConverter.ToSingle(buffer,2*4));
+     //Who knew a single and a float were the same thing. So much trial n error to get this its not even funny.
+     Console.WriteLine( BitConverter.ToSingle(buffer,0) +" "+  BitConverter.ToSingle(buffer,1*4)+" "+  BitConverter.ToSingle(buffer,2*4));
+     Console.WriteLine("G");
             
-     cube.transform.position = new Vector3(BitConverter.ToSingle(buffer,0),BitConverter.ToSingle(buffer,1*4),BitConverter.ToSingle(buffer,2*4));
+     //cube.transform.position = new Vector3(BitConverter.ToSingle(buffer,0),BitConverter.ToSingle(buffer,1*4),BitConverter.ToSingle(buffer,2*4));
 
     }
 
+    static void Main(string[] args)
+    {
+        StartServer();
+    }
+
 }
-*/

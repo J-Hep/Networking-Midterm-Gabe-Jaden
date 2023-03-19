@@ -1,0 +1,15 @@
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.exe
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.deps.json
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.runtimeconfig.json
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.dll
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.pdb
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.csproj.AssemblyReference.cache
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.AssemblyInfoInputs.cache
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.AssemblyInfo.cs
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.csproj.CoreCompileInputs.cache
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.dll
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\refint\Proj.dll
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.pdb
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.genruntimeconfig.cache
+C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\ref\Proj.dll
