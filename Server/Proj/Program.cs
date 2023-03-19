@@ -13,31 +13,88 @@ public class UDPServer
 {
 
 
-    public static byte[] buffer;
-    public static IPHostEntry hostInfo ;
-    public static IPAddress ip;
-    public static IPEndPoint localEP;
-    public static Socket server;
-    public static EndPoint remoteClient;
+    public static byte[] UDPbufferOne, UDPbufferTwo;
+    public static IPHostEntry UDPhostInfoOne, UDPhostInfoTwo;
+    public static IPAddress ipOne,ipTwo;
+    public static IPEndPoint UDPlocalEPOne,UDPlocalEPTwo;
+    public static Socket UDPserverOne, UDPserverTwo;
+    public static EndPoint UDPremoteClientOne, UDPremoteClientTwo;
 
     public float posX, posZ;
+    public static bool clientOneConnected = false, clientTwoConnected = false;
 
-
-    public static void StartServer()
+    public static void StartUDPServerOne()
     {
-        buffer = new byte[512];
-        hostInfo = Dns.GetHostEntry(Dns.GetHostName());
-        ip = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
-        Console.WriteLine("Server name: {0}  IP: {1}", hostInfo.HostName, ip);
+        UDPbufferOne = new byte[512];
+        UDPhostInfoOne = Dns.GetHostEntry(Dns.GetHostName());
+        ipOne = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
+        Console.WriteLine("Server name: {0}  IP: {1}", UDPhostInfoOne.HostName, ipOne);
  
-        localEP = new IPEndPoint(ip, 8888);
-        server = new Socket(ip.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
-        remoteClient = new IPEndPoint(IPAddress.Any, 0);
+        UDPlocalEPOne = new IPEndPoint(ipOne, 8888);
+        UDPserverOne = new Socket(ipOne.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+        UDPremoteClientOne = new IPEndPoint(IPAddress.Any, 0);
+
+        /////////////////////////////////////////////////////////////////////////////////
+
+        UDPbufferTwo = new byte[512];
+        UDPhostInfoTwo = Dns.GetHostEntry(Dns.GetHostName());
+        ipTwo = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
+        Console.WriteLine("Server name: {0}  IP: {1}", UDPhostInfoTwo.HostName, ipTwo);
+ 
+        UDPlocalEPTwo = new IPEndPoint(ipTwo, 9999);
+        UDPserverTwo = new Socket(ipTwo.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+        UDPremoteClientTwo = new IPEndPoint(IPAddress.Any, 0);
+
 
         try
         {
-            server.Bind(localEP);
-            Console.WriteLine("Waiting for data....");
+            UDPserverOne.Bind(UDPlocalEPOne);
+            Console.WriteLine("Waiting for client one data....");
+            clientOneConnected = true;
+
+            //server shutdown
+        } catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+
+        }
+
+       
+
+    }
+
+      public static void StartUDPServerTwo()
+    {
+        /*
+        bufferOne = new byte[512];
+        hostInfoOne = Dns.GetHostEntry(Dns.GetHostName());
+        ipOne = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
+        Console.WriteLine("Server name: {0}  IP: {1}", hostInfoOne.HostName, ipOne);
+ 
+        localEPOne = new IPEndPoint(ipOne, 8888);
+        serverOne = new Socket(ipOne.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+        remoteClientOne = new IPEndPoint(IPAddress.Any, 0);
+        */
+        /////////////////////////////////////////////////////////////////////////////////
+
+        UDPbufferTwo = new byte[512];
+        UDPhostInfoTwo = Dns.GetHostEntry(Dns.GetHostName());
+        ipTwo = IPAddress.Parse("127.0.0.1");//hostInfo.AddressList[1]; //IPAddress.Parse("127.0.0.1");
+        Console.WriteLine("Server name: {0}  IP: {1}", UDPhostInfoTwo.HostName, ipTwo);
+ 
+        UDPlocalEPTwo = new IPEndPoint(ipTwo, 8889);
+        UDPserverTwo = new Socket(ipTwo.AddressFamily, SocketType.Dgram, ProtocolType.Udp);
+        UDPremoteClientTwo = new IPEndPoint(IPAddress.Any, 0);
+
+
+        try
+        {
+           // serverOne.Bind(localEPOne);
+            //Console.WriteLine("Waiting for client one data....");
+
+           UDPserverTwo.Bind(UDPlocalEPTwo);
+            Console.WriteLine("Waiting for client Two data....");
+            clientTwoConnected = true;
 
 
             //server shutdown
@@ -47,21 +104,33 @@ public class UDPServer
 
         }
 
-        while(true)
-        {
-            recvUpdate();
-        }
-
+  
     }
 
     public static void recvUpdate()
     {
-        
-     int recv = server.ReceiveFrom(buffer, ref remoteClient);
+        if(clientOneConnected) 
+        {
+            int recvFromClientOne = UDPserverOne.ReceiveFrom(UDPbufferOne, ref UDPremoteClientOne);
+          //  Console.WriteLine(UDPremoteClientOne.ToString()+ " ClientOne: " + BitConverter.ToSingle(UDPbufferOne,0) +" "+  BitConverter.ToSingle(UDPbufferOne,1*4)+" "+  BitConverter.ToSingle(UDPbufferOne,2*4));
+        Console.WriteLine("Received " + BitConverter.ToSingle(UDPbufferOne,0) +", "+  BitConverter.ToSingle(UDPbufferOne,1*4)+", "+  BitConverter.ToSingle(UDPbufferOne,2*4) +" from [C1 " + UDPremoteClientOne.ToString() + "]" );
 
-     //Who knew a single and a float were the same thing. So much trial n error to get this its not even funny.
-     Console.WriteLine( BitConverter.ToSingle(buffer,0) +" "+  BitConverter.ToSingle(buffer,1*4)+" "+  BitConverter.ToSingle(buffer,2*4));
-     Console.WriteLine("G");
+        }
+
+        if(clientTwoConnected)
+        {
+            int recvFromClientTwo = UDPserverTwo.ReceiveFrom(UDPbufferTwo, ref UDPremoteClientTwo);
+           // Console.WriteLine(UDPremoteClientTwo.ToString()+" ClientTwo: " + BitConverter.ToSingle(UDPbufferTwo,0) +" "+  BitConverter.ToSingle(UDPbufferTwo,1*4)+" "+  BitConverter.ToSingle(UDPbufferTwo,2*4));
+               Console.WriteLine("Received " + BitConverter.ToSingle(UDPbufferTwo,0) +", "+  BitConverter.ToSingle(UDPbufferTwo,1*4)+", "+  BitConverter.ToSingle(UDPbufferTwo,2*4) +" from [C2 " + UDPremoteClientTwo.ToString() + "]" );
+        }
+
+        if(clientOneConnected && clientTwoConnected){
+            
+        }
+
+
+
+     Console.WriteLine("████████████████████████████████████████████████████████████████");
             
      //cube.transform.position = new Vector3(BitConverter.ToSingle(buffer,0),BitConverter.ToSingle(buffer,1*4),BitConverter.ToSingle(buffer,2*4));
 
@@ -69,7 +138,13 @@ public class UDPServer
 
     static void Main(string[] args)
     {
-        StartServer();
+        StartUDPServerOne();
+        StartUDPServerTwo();
+
+        while(clientOneConnected && clientTwoConnected){
+            recvUpdate();
+        }
+
     }
 
 }

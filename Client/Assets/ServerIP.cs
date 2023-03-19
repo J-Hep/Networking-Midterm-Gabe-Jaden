@@ -7,13 +7,18 @@ public class ServerIP : MonoBehaviour
 {
 
     public string serverIP = "127.0.0.1";
-    public GameObject inputText, connectButton;
+    public string serverPort = "8888";
+    public GameObject inputTextIP,inputTextPort, connectButton;
 
     public void SetServerIP(){
-        serverIP = inputText.GetComponent<InputField>().text;
-        connectButton.GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = "Connected to: " + serverIP;
+        serverIP = inputTextIP.GetComponent<InputField>().text;
+        serverPort = inputTextPort.GetComponent<InputField>().text;
+        connectButton.GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = "Connected to: " + serverIP + ":"+serverPort;
 
-        Client.StartClient(serverIP);
+
+    
+
+        Client.StartClient(serverIP,int.Parse(serverPort));
     }
 
 

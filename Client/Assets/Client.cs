@@ -16,20 +16,22 @@ public class Client : MonoBehaviour
      public float culminativeTime, desiredTime = 0.25f;
 
     private static byte[] outBuffer = new byte[512], inBuffer = new byte[512];
-    private static IPEndPoint remoteEP;
+    private static EndPoint remoteEP; //WAS A IPENDPOINT
     private static Socket clientSoc;
 
     public static bool clientStarted = false;
 
-    public static void StartClient(string userInputIP)
+    int recvOne, recvTwo;
+
+    public static void StartClient(string userInputIP, int userInputPort)
     {
         try
         {
             
             IPAddress ip = IPAddress.Parse(userInputIP); //IPv4 address from IPconfig
-            remoteEP = new IPEndPoint(ip, 8888);
+            remoteEP = new IPEndPoint(ip, userInputPort);
 
-            Debug.Log("Connecting to: "+ ip);
+            Debug.Log("Connecting to: "+ ip + ":"+userInputPort);
 
             clientSoc = new Socket(AddressFamily.InterNetwork, 
                 SocketType.Dgram, ProtocolType.Udp);
