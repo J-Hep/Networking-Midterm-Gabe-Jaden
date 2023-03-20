@@ -13,3 +13,18 @@ C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debu
 C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.pdb
 C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.genruntimeconfig.cache
 C:\Users\JH\Documents\GitFork\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\ref\Proj.dll
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.csproj.AssemblyReference.cache
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.AssemblyInfoInputs.cache
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.AssemblyInfo.cs
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.csproj.CoreCompileInputs.cache
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.dll
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\refint\Proj.dll
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.pdb
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.exe
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.deps.json
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.runtimeconfig.json
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.dll
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\bin\Debug\net7.0\Proj.pdb
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\Proj.genruntimeconfig.cache
+C:\Users\gabem\Desktop\Unity Projects\Networking-Midterm-Gabe-Jaden\Server\Proj\obj\Debug\net7.0\ref\Proj.dll
