@@ -135,8 +135,8 @@ public class UDPServer
         TCPServer.StartServer();
 
 
-        StartUDPServerOne();
-        StartUDPServerTwo();
+        //StartUDPServerOne();
+        //StartUDPServerTwo();
     
 
 
@@ -158,10 +158,10 @@ public class TCPServer
 
         Console.WriteLine("Gamer");
         //local host
-        IPAddress ip = IPAddress.Parse("172.31.87.75");
+        IPAddress ip = IPAddress.Parse("127.0.0.1");
         Console.WriteLine("Server IP: " + ip);
 
-        IPEndPoint serverEP = new IPEndPoint(ip, 8888);
+        IPEndPoint serverEP = new IPEndPoint(ip, 7777);
 
         Socket server = new Socket(ip.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
@@ -180,6 +180,7 @@ public class TCPServer
 
             Console.WriteLine("Client: {0} Port: {1} ", clientEp.Address, clientEp.Port);
 
+            /*
             //Sending message to client
             byte[] msg = Encoding.ASCII.GetBytes("Hello Server.");
             client.Send(msg);
@@ -194,6 +195,18 @@ public class TCPServer
             }
 
             ////////////////////////////////////////////
+            */
+
+            NetworkStream stream = client.GetStream();
+
+            byte[] buffer = new byte[1024];
+            int bytesRead = stream.Read(buffer, 0, buffer.length);
+            string msg = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+            Console.WriteLine("Receieved Message: " + msg);
+            
+
+
 
             //releasing resources
             client.Shutdown(SocketShutdown.Both);

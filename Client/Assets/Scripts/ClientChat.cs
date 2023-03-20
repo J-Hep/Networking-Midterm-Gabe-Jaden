@@ -21,7 +21,7 @@ public class ClientChat : MonoBehaviour
     {
         //Creating Tcp Socket
         client = new TcpClient();
-        client.Connect("127.0.0.1", 8889);
+        client.Connect("127.0.0.1", 7777);
     }
 
     // Update is called once per frame
